@@ -15,6 +15,7 @@ public class FTPHelper {
 	public static final String SOURCE_LOC = "foop.source";
 	public static final String TARGET_LOC = "foop.target";
 	public static final String FTP_TYPE = "foop.ftp.type";
+
 	FTPHelper(Configuration conf) throws Exception{
 		setHost(conf.get(FTP_CONN),conf.get(FTP_USER),conf.get(FTP_PASS));
 		setSource(conf.get(SOURCE_LOC));
@@ -32,6 +33,7 @@ public class FTPHelper {
 	public String getFtpType() {
 		return this.ftpType;
 	}
+
 	public void setHost(String host, String user, String password) throws Exception {
 		System.out.println("Connecting host:"+host+" with username:"+user+"paswword:****");
 		if(user == null){
