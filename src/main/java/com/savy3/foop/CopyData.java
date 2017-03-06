@@ -22,6 +22,7 @@ public class CopyData {
 	}
 	CopyData(Configuration jConf){
 		conf = jConf;
+		System.out.println(conf.get("foop.ftp.connection"));
 		ftph = new FTPHelper(conf);
 		ftpfs = ftph.getFTPFileSystem();
 		ftpfs.setConf(conf);
