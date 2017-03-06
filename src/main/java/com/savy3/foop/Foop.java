@@ -7,8 +7,7 @@ import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.mapred.JobConf;
 
 public class Foop {
-	public static void main(String[] args) throws IOException,
-			URISyntaxException {
+	public static void main(String[] args) throws Exception {
 		Configuration job = new JobConf(Foop.class);
 		int i = 0;
 		while (i < args.length) {
