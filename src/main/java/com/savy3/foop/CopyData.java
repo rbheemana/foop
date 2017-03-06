@@ -14,13 +14,13 @@ public class CopyData {
 	FTPFileSystem ftpfs;
 	Configuration conf;
 	FTPHelper ftph;
-	CopyData(){
+	CopyData() throws Exception{
 		conf = new Configuration();
 		ftpfs = new FTPFileSystem();
 		ftpfs.setConf(conf);
 		ftph = new FTPHelper(conf);
 	}
-	CopyData(Configuration jConf){
+	CopyData(Configuration jConf) throws Exception{
 		conf = jConf;
 		ftph = new FTPHelper(conf);
 		ftpfs = ftph.getFTPFileSystem();
