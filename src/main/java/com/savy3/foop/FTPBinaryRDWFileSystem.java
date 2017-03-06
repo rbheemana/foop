@@ -49,6 +49,7 @@ public class FTPBinaryRDWFileSystem extends FTPFileSystem {
     String user = conf.get("fs.ftp.user." + host);
     String password = conf.get("fs.ftp.password." + host);
     client = new FTPClient();
+    System.out.println("Connecting to :"+host+":"+port);
     client.connect(host, port);
     int reply = client.getReplyCode();
     if (!FTPReply.isPositiveCompletion(reply)) {
