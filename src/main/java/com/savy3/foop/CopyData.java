@@ -14,15 +14,14 @@ public class CopyData {
 	FTPFileSystem ftpfs;
 	Configuration conf;
 	FTPHelper ftph;
-	CopyData() throws Exception{
+	CopyData(){
 		conf = new Configuration();
 		ftpfs = new FTPFileSystem();
 		ftpfs.setConf(conf);
 		ftph = new FTPHelper(conf);
 	}
-	CopyData(Configuration jConf) throws Exception{
+	CopyData(Configuration jConf){
 		conf = jConf;
-		System.out.println(conf.get("foop.ftp.connection"));
 		ftph = new FTPHelper(conf);
 		ftpfs = ftph.getFTPFileSystem();
 		ftpfs.setConf(conf);
