@@ -51,7 +51,6 @@ public class FTPASCIIFileSystem extends FTPFileSystem {
     client = new FTPClient();
     client.connect(host, port);
     System.out.println("Connecting to host @"+host+":"+port);
-    hahahahah
     int reply = client.getReplyCode();
     if (!FTPReply.isPositiveCompletion(reply)) {
       throw new IOException("Server - " + host
