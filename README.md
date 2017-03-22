@@ -6,14 +6,14 @@ Purpose of this project as below:
 2. Multiple files from FTP server needs to be downloaded in parallel 
 3. Files should directly pushed to HDFS
 
-Command Syntax:
+## Command Syntax:
 hadoop jar <jar_local_location> com.savy3.foop.Foop --connect {ftp_url} --username {userid} --password {password} --source-dir {source file/dir} --target-dir {target hdfs dir} [--ftp-type-ascii|--ftp-type-bin-rdw]
 
 Ex:
 hadoop jar /jar/foop.jar com.savy3.foop.Foop --connect gnu.org  --source-dir /gnu/GNUinfo/  --target-dir /data/gnu --username anonymous --password null
 
 Output:
-```````
+```
 /data/gnu/Audio
 /data/gnu/Audio/README
 /data/gnu/Audio/francais
@@ -32,3 +32,4 @@ Output:
 /data/gnu/Audio/rms-speech-nyu2001.ogg
 /data/gnu/Audio/rms-speech-qmul-london2002.ogg
 /data/gnu/README
+```
