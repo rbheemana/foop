@@ -65,15 +65,16 @@ public class CopyData {
 		}else{
 			System.out.println("Directory is specified, Preparing Map-Reduce Job..");
 			
-			//Path outputFolder = new Path(ftph.getTarget(),".foop_input_"+ts1);
-		    FSDataOutputStream outputStream = fileSystem.create(ftph.getMRInputFolder());
-		    
+		    FSDataOutputStream outputStream;
+		    int i=0;
 			for (Path p: ftpfs.listFiles(ftph.getSource())){
+				outputStream = fileSystem.create(new Path(ftph.getMRInputFolder(),""+i));
 				String filename = ""+p.getParent().toString()+"/"+p.getName().toString();
 				outputStream.writeBytes(filename.trim()+"\n");
-				//System.out.println("F:"+ftph.getOutputLocation(new Path(filename)));
+				outputStream.close();
+				i++;
 			}
-			outputStream.close();
+			
 			System.out.println("Input to Map-Reduce:"+ftph.getMRInputFolder());
 			Job jobMR = Job.getInstance(conf, "FTP to Hadoop");
 			jobMR.setJarByClass(Foop.class);
