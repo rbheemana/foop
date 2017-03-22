@@ -1,5 +1,5 @@
 # foop
-This Project is built to FTP the files from the FTPServer to Hadoop. 
+This Project is built to FTP the files from the FTPServer to HDFS parallely. 
 
 Purpose of this project as below:
 1. Pull data from any FTP server. Ex: Mainframe, FTP, etc
